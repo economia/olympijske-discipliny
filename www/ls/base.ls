@@ -47,7 +47,9 @@ events.forEach (event) ->
         for index in [locationId til gamesLength]
             lastParents[index] := node
 
-
+window.root = root
+return
+# console.log root
 width = 8000
 height = 2200
 cluster = d3.layout.cluster!
