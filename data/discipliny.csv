@@ -1,17 +1,17 @@
 Sport,Londýn 1908,Antverpy 1920,Chamonix 1924,St. Moritz 1928,Lake Placid 1932,Garmisch-Partenkirchen 1936,St. Moritz 1948,Oslo 1952,Cortina d'Ampezzo 1956,Squaw Valley 1960,Insbruck 1964,Grenobl 1968,Sapporo 1972,Innsbruck 1976,Lake Placid 1980,Sarajevo 1984,Calgary 1988,Albertville 1992,Lilehammer 1994,Nagano 1998,Salt Lake City 2002,Turín 2006,Vancouver 2010,Sochi 2014
 ,,,,,,,,,,,,,,,,,,,,,,,,
-Akrobatické lyžování,,,,,,,,,,,,,,,,,Muži akrobatické skoky,Muži akrobatické skoky,Muži akrobatické skoky,Muži akrobatické skoky,Muži akrobatické skoky,Muži akrobatické skoky,Muži akrobatické skoky,Muži akrobatické skoky
+Akrobatické lyžování,,,,,,,,,,,,,,,,,X:Muži akrobatické skoky,X:Muži akrobatické skoky,Muži akrobatické skoky,Muži akrobatické skoky,Muži akrobatické skoky,Muži akrobatické skoky,Muži akrobatické skoky,Muži akrobatické skoky
 ,,,,,,,,,,,,,,,,,,,,,,,,Muži U-rampa
-,,,,,,,,,,,,,,,,,Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích
+,,,,,,,,,,,,,,,,,X:Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích,Muži jízda na boulích
 ,,,,,,,,,,,,,,,,,,,,,,,,Muži slopestyle
 ,,,,,,,,,,,,,,,,,,,,,,,Muži skikros,Muži skikros
-,,,,,,,,,,,,,,,,,Ženy akrobatické skoky,Ženy akrobatické skoky,Ženy akrobatické skoky,Ženy akrobatické skoky,Ženy akrobatické skoky,Ženy akrobatické skoky,Ženy akrobatické skoky,Ženy akrobatické skoky
+,,,,,,,,,,,,,,,,,X:Ženy akrobatické skoky,X:Ženy akrobatické skoky,Ženy akrobatické skoky,Ženy akrobatické skoky,Ženy akrobatické skoky,Ženy akrobatické skoky,Ženy akrobatické skoky,Ženy akrobatické skoky
 ,,,,,,,,,,,,,,,,,,,,,,,,Ženy U-rampa
-,,,,,,,,,,,,,,,,,Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích
+,,,,,,,,,,,,,,,,,X:Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích,Ženy jízda na boulích
 ,,,,,,,,,,,,,,,,,,,,,,,,Ženy slopestyle
 ,,,,,,,,,,,,,,,,,,,,,,,Ženy skikros,Ženy skikros
-,,,,,,,,,,,,,,,,,Muži balet na lyžích,Muži balet na lyžích,,,,,,
-,,,,,,,,,,,,,,,,,Ženy balet na lyžích,Ženy balet na lyžích,,,,,,
+,,,,,,,,,,,,,,,,,X:Muži balet na lyžích,X:Muži balet na lyžích,,,,,,
+,,,,,,,,,,,,,,,,,X:Ženy balet na lyžích,X:Ženy balet na lyžích,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,
 Alpské lyžování,,,,,,,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd,Muži sjezd
 ,,,,,,,,,,,,,,,,,Muži super-G,Muži super-G,Muži super-G,Muži super-G,Muži super-G,Muži super-G,Muži super-G,Muži super-G
@@ -57,8 +57,8 @@ Boby,,,Muži čtyř- nebo pětibob,Muži pětibob,Muži čtyřbob,Muži čtyřbo
 ,,,,,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob,Muži dvojbob
 ,,,,,,,,,,,,,,,,,,,,,Ženy dvojbob,Ženy dvojbob,Ženy dvojbob,Ženy dvojbob
 ,,,,,,,,,,,,,,,,,,,,,,,,
-Curling,,,Muži,,Muži,,,,,,,,,,,,Muži,Muži,,Muži,Muži,Muži,Muži,Muži
-,,,,,,,,,,,,,,,,,Ženy,Ženy,,Ženy,Ženy,Ženy,Ženy,Ženy
+Curling,,,Muži,,X:Muži,,,,,,,,,,,,X:Muži,X:Muži,,Muži,Muži,Muži,Muži,Muži
+,,,,,,,,,,,,,,,,,X:Ženy,X:Ženy,,Ženy,Ženy,Ženy,Ženy,Ženy
 ,,,,,,,,,,,,,,,,,,,,,,,,
 Krasobruslení,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži,Muži
 ,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy,Ženy
@@ -76,9 +76,9 @@ Rychlobruslení,,,Muži 500 m,Muži 500 m,Muži 500 m,Muži 500 m,Muži 500 m,Mu
 ,,,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m,Muži 5000 m
 ,,,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m,Muži 10000 m
 ,,,,,,,,,,,,,,,,,,,,,,Muži stíhací závod týmy,Muži stíhací závod týmy,Muži stíhací závod týmy
-,,,,,Ženy 500 m,,,,,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m
-,,,,,Ženy 1000 m,,,,,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m
-,,,,,Ženy 1500 m,,,,,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m
+,,,,,X:Ženy 500 m,,,,,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m
+,,,,,X:Ženy 1000 m,,,,,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m
+,,,,,X:Ženy 1500 m,,,,,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m
 ,,,,,,,,,,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m,Ženy 3000 m
 ,,,,,,,,,,,,,,,,,Ženy 5000 m,Ženy 5000 m,Ženy 5000 m,Ženy 5000 m,Ženy 5000 m,Ženy 5000 m,Ženy 5000 m,Ženy 5000 m
 ,,,,,,,,,,,,,,,,,,,,,,Muži stíhací závod týmy,Muži stíhací závod týmy,Muži stíhací závod týmy
@@ -93,16 +93,16 @@ Severská kombinace,,,"15 km, střední můstek","18 km, velký můstek","18 km,
 ,,,,,,,,,,,,,,,,,,,,,"7,5 km, velký můstek","7,5 km, velký můstek","10 km, velký můstek","10 km, velký můstek"
 ,,,,,,,,,,,,,,,,,"3×10 km, střední můstek týmy","3×10 km, střední můstek týmy","3×10 km, střední můstek týmy","4×5 km, střední můstek týmy","4×5 km, střední můstek týmy","4×5 km, střední můstek týmy","4×10 km, velký můstek týmy","4×10 km, velký můstek týmy"
 ,,,,,,,,,,,,,,,,,,,,,,,,
-Short track,,,,,,,,,,,,,,,,,Muži 500 m,,Muži 500 m,Muži 500 m,Muži 500 m,Muži 500 m,Muži 500 m,Muži 500 m
-,,,,,,,,,,,,,,,,,Muži 1000 m,Muži 1000 m,Muži 1000 m,Muži 1000 m,Muži 1000 m,Muži 1000 m,Muži 1000 m,Muži 1000 m
-,,,,,,,,,,,,,,,,,Muži 1500 m,,,,Muži 1500 m,Muži 1500 m,Muži 1500 m,Muži 1500 m
-,,,,,,,,,,,,,,,,,Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta
-,,,,,,,,,,,,,,,,,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m
-,,,,,,,,,,,,,,,,,Ženy 1000 m,,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m
-,,,,,,,,,,,,,,,,,Ženy 1500 m,,,,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m
-,,,,,,,,,,,,,,,,,Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta
-,,,,,,,,,,,,,,,,,Muži 3000 m,,,,,,,
-,,,,,,,,,,,,,,,,,Ženy 3000 m,,,,,,,
+Short track,,,,,,,,,,,,,,,,,X:Muži 500 m,,Muži 500 m,Muži 500 m,Muži 500 m,Muži 500 m,Muži 500 m,Muži 500 m
+,,,,,,,,,,,,,,,,,X:Muži 1000 m,Muži 1000 m,Muži 1000 m,Muži 1000 m,Muži 1000 m,Muži 1000 m,Muži 1000 m,Muži 1000 m
+,,,,,,,,,,,,,,,,,X:Muži 1500 m,,,,Muži 1500 m,Muži 1500 m,Muži 1500 m,Muži 1500 m
+,,,,,,,,,,,,,,,,,X:Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta,Muži 5000 m štafeta
+,,,,,,,,,,,,,,,,,X:Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m,Ženy 500 m
+,,,,,,,,,,,,,,,,,X:Ženy 1000 m,,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m,Ženy 1000 m
+,,,,,,,,,,,,,,,,,X:Ženy 1500 m,,,,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m,Ženy 1500 m
+,,,,,,,,,,,,,,,,,X:Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta,Ženy 3000 m štafeta
+,,,,,,,,,,,,,,,,,X:Muži 3000 m,,,,,,,
+,,,,,,,,,,,,,,,,,X:Ženy 3000 m,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,
 Skeleton,,,,Muži,,,Muži,,,,,,,,,,,,,,Muži,Muži,Muži,Muži
 ,,,,,,,,,,,,,,,,,,,,,Ženy,Ženy,Ženy,Ženy
@@ -123,26 +123,26 @@ Snowboarding,,,,,,,,,,,,,,,,,,,,,,,,Muži paralelní slalom
 ,,,,,,,,,,,,,,,,,,,,,,,,Ženy slopestyle
 ,,,,,,,,,,,,,,,,,,,,,,Ženy snowboardkros,Ženy snowboardkros,Ženy snowboardkros
 ,,,,,,,,,,,,,,,,,,,,,,,,
-Bandy,,,,,,,,Muži týmy,,,,,,,,,,,,,,,,
+Bandy,,,,,,,,X:Muži týmy,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,
-Eisstockschießen („Bavorský curling“),,,,,,Muži týmy,,,,,,,,,,,,,,,,,,
+Eisstockschießen („Bavorský curling“),,,,,,X:Muži týmy,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,
-Lyžování postižených,,,,,,,,,,,,,,,,Muži obří slalom s amputovanou nohou,,,,,,,,
-,,,,,,,,,,,,,,,,Muži obří slalom s nohou amputovanou nad kolenem,,,,,,,,
-,,,,,,,,,,,,,,,,Muži obří slalom s amputovanou rukou,,,,,,,,
-,,,,,,,,,,,,,,,,Muži obří slalom bez rukou,,,,,,,,
-,,,,,,,,,,,,,,,,,Muži obří slalom s nohou amputovanou nad kolenem,,,,,,,
-,,,,,,,,,,,,,,,,,Muži 5 km běh na lyžích nevidomých,,,,,,,
-,,,,,,,,,,,,,,,,,Ženy obří slalom s nohou amputovanou nad kolenem,,,,,,,
-,,,,,,,,,,,,,,,,,Ženy 5 km běh na lyžích nevidomých,,,,,,,
+Lyžování postižených,,,,,,,,,,,,,,,,X:Muži obří slalom s amputovanou nohou,,,,,,,,
+,,,,,,,,,,,,,,,,X:Muži obří slalom s nohou amputovanou nad kolenem,,,,,,,,
+,,,,,,,,,,,,,,,,X:Muži obří slalom s amputovanou rukou,,,,,,,,
+,,,,,,,,,,,,,,,,X:Muži obří slalom bez rukou,,,,,,,,
+,,,,,,,,,,,,,,,,,X:Muži obří slalom s nohou amputovanou nad kolenem,,,,,,,
+,,,,,,,,,,,,,,,,,X:Muži 5 km běh na lyžích nevidomých,,,,,,,
+,,,,,,,,,,,,,,,,,X:Ženy obří slalom s nohou amputovanou nad kolenem,,,,,,,
+,,,,,,,,,,,,,,,,,X:Ženy 5 km běh na lyžích nevidomých,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,
-Psí spřežení,,,,,Muži,,,,,,,,,,,,,,,,,,,
+Psí spřežení,,,,,X:Muži,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,
-Rychlostní lyžování,,,,,,,,,,,,,,,,,,Muži,,,,,,
-,,,,,,,,,,,,,,,,,,Ženy,,,,,,
+Rychlostní lyžování,,,,,,,,,,,,,,,,,,X:Muži,,,,,,
+,,,,,,,,,,,,,,,,,,X:Ženy,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,
-Skijöring,,,,Muži,,,,,,,,,,,,,,,,,,,,
+Skijöring,,,,X:Muži,,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,
-Vojenské hlídky,,,Muži,Muži,,Muži týmy,Muži týmy,,,,,,,,,,,,,,,,,
+Vojenské hlídky,,,Muži,X:Muži,,X:Muži týmy,X:Muži týmy,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,,,,,,
-Zimní pětiboj,,,,,,,Muži,,,,,,,,,,,,,,,,,
+Zimní pětiboj,,,,,,,X:Muži,,,,,,,,,,,,,,,,,
