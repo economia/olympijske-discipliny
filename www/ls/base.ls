@@ -27,9 +27,13 @@ data.forEach (event) ->
 
 margin =
     top: 0
+    right: 0
     bottom: 30
-height = window.innerHeight - margin.bottom
-width = window.innerWidth
+    left: 20
+fullHeight = 650 # window.innerHeight
+fullWidth = 970 # window.innerWidth
+height = fullHeight - margin.bottom - margin.top
+width = fullWidth - margin.left - margin.right
 max = sports.reduce do
     (sum, sport) -> sum += sport.yearlyEvents[* - 1].events.length
     0
@@ -73,11 +77,11 @@ area = d3.svg.area!
     ..interpolate \monotone
 
 svg = d3.select \.discipliny .append \svg
-    ..attr \width width
-    ..attr \height height + margin.bottom + margin.top
+    ..attr \width fullWidth
+    ..attr \height fullHeight
 drawing = svg.append \g
     ..attr \class \drawing
-    ..style \transform "translate(0, 0)"
+    ..attr \transform "translate(#{margin.left}, #{margin.top})"
 graph = drawing.append \g
     ..attr \class \graph
 
