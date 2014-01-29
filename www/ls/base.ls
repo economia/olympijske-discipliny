@@ -46,7 +46,7 @@ x = d3.scale.linear!
 y = d3.scale.linear!
     ..domain [0 max]
     ..range [height, 0]
-
+console.log Color
 stack = d3.layout.stack!
     ..values (sport) -> sport.yearlyEvents
     ..x (yearlyEvents) -> yearlyEvents.year
@@ -59,6 +59,8 @@ sports .= sort (a, b) ->
     bLastEvent = b.yearlyEvents[* - 8]
     aLastEvent.y0 - bLastEvent.y0
 
+sports.forEach (sport, index) -> sport.color = index
+
 area = d3.svg.area!
     ..x (yearlyEvents) ~> x yearlyEvents.year
     ..y1 (yearlyEvents) ~> y yearlyEvents.y0 + yearlyEvents.y
@@ -69,11 +71,25 @@ svg = d3.select \.discipliny .append \svg
     ..attr \width width
     ..attr \height height
 
-svg.selectAll \path.sport .data sports
-    ..enter!append \path
-        ..attr \class \sport
+firstDrawComplete = no
+draw-all = (selected = null) ->
+    svg.selectAll \path.sport .data sports
+        ..enter!append \path
+            ..attr \class \sport
+    path = svg.selectAll \path.sport
         ..attr \d ~> area it.yearlyEvents
         ..attr \data-tooltip (.name)
-        ..style \fill (d, index) -> color index
+    fillContainer = switch firstDrawComplete
+        | yes => path.transition!duration 800
+        | no  => path
 
-console.log sports
+    fillContainer
+        ..style \fill (d) ->
+            | selected != null and selected != d => grayscaleColor d.color
+            | otherwise => color d.color
+        ..style \fill-opacity (d) ->
+            | selected != null and selected != d => 0.3
+            | otherwise => 1
+    firstDrawComplete := yes
+
+draw-all!
