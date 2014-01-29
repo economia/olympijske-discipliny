@@ -25,7 +25,10 @@ data.forEach (event) ->
         locationId = index
         lastSport.yearlyEvents[index].events.push name
 
-height = window.innerHeight
+margin =
+    top: 0
+    bottom: 30
+height = window.innerHeight - margin.bottom
 width = window.innerWidth
 max = sports.reduce do
     (sum, sport) -> sum += sport.yearlyEvents[* - 1].events.length
@@ -33,8 +36,10 @@ max = sports.reduce do
 colors = <[#e41a1c #377eb8 #4daf4a #984ea3 #ff7f00 #ffff33 #a65628 #f781bf #4daf4a #984ea3 ]>
 grayscaleColors = colors.map utils.to-grayscale
 
+
 color = d3.scale.ordinal!
     ..range colors
+
 
 grayscaleColor = d3.scale.ordinal!
     ..range grayscaleColors
@@ -46,7 +51,7 @@ x = d3.scale.linear!
 y = d3.scale.linear!
     ..domain [0 max]
     ..range [height, 0]
-console.log Color
+
 stack = d3.layout.stack!
     ..values (sport) -> sport.yearlyEvents
     ..x (yearlyEvents) -> yearlyEvents.year
@@ -69,14 +74,34 @@ area = d3.svg.area!
 
 svg = d3.select \.discipliny .append \svg
     ..attr \width width
-    ..attr \height height
+    ..attr \height height + margin.bottom + margin.top
+drawing = svg.append \g
+    ..attr \class \drawing
+    ..style \transform "translate(0, 0)"
+graph = drawing.append \g
+    ..attr \class \graph
+
+draw-x-axis = ->
+    xAxis = d3.svg.axis!
+        ..scale x
+        ..tickFormat -> it
+        ..tickSize 4
+        ..ticks 10
+        ..outerTickSize 0
+        ..orient \bottom
+    xAxisGroup = drawing.append \g
+        ..attr \class "axis x"
+        ..attr \transform "translate(0, #{height})"
+        ..call xAxis
+        ..selectAll "text"
+            ..attr \dy 21
 
 firstDrawComplete = no
 draw-all = (selected = null) ->
-    svg.selectAll \path.sport .data sports
+    graph.selectAll \path.sport .data sports
         ..enter!append \path
             ..attr \class \sport
-    path = svg.selectAll \path.sport
+    path = graph.selectAll \path.sport
         ..attr \d ~> area it.yearlyEvents
         ..attr \data-tooltip (.name)
     fillContainer = switch firstDrawComplete
@@ -93,3 +118,4 @@ draw-all = (selected = null) ->
     firstDrawComplete := yes
 
 draw-all!
+draw-x-axis!
