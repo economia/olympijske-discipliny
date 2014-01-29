@@ -34,7 +34,7 @@ fullHeight = 650 # window.innerHeight
 fullWidth = 970 # window.innerWidth
 height = fullHeight - margin.bottom - margin.top
 width = fullWidth - margin.left - margin.right
-max = sports.reduce do
+sumOfEvents = sports.reduce do
     (sum, sport) -> sum += sport.yearlyEvents[* - 1].events.length
     0
 colors = <[#e41a1c #377eb8 #4daf4a #984ea3 #ff7f00 #ffff33 #a65628 #f781bf #4daf4a #984ea3 ]>
@@ -53,7 +53,6 @@ x = d3.scale.linear!
     ..range [0 width]
 
 y = d3.scale.linear!
-    ..domain [0 max]
     ..range [height, 0]
 
 stack = d3.layout.stack!
@@ -74,6 +73,12 @@ area = d3.svg.area!
     ..x (yearlyEvents) ~> x yearlyEvents.year
     ..y1 (yearlyEvents) ~> y yearlyEvents.y0 + yearlyEvents.y
     ..y0 (yearlyEvents) ~> y yearlyEvents.y0
+    ..interpolate \monotone
+
+detailArea = d3.svg.area!
+    ..x (yearlyEvents) ~> x yearlyEvents.year
+    ..y1 (yearlyEvents) ~> y yearlyEvents.y
+    ..y0 (yearlyEvents) ~> y 0
     ..interpolate \monotone
 
 svg = d3.select \.discipliny .append \svg
@@ -101,7 +106,8 @@ draw-x-axis = ->
             ..attr \dy 21
 
 firstDrawComplete = no
-draw-all = (selected = null) ->
+draw-all = (selected = null, cb) ->
+    y.domain [0 sumOfEvents]
     graph.selectAll \g.sport .data sports
         ..enter!append \g
             ..attr \class \sport
@@ -120,7 +126,34 @@ draw-all = (selected = null) ->
         ..style \fill-opacity (d) ->
             | selected != null and selected != d => 0.3
             | otherwise => 1
+    if cb
+        if firstDrawComplete then setTimeout cb, 800 else cb!
+
     firstDrawComplete := yes
+
+draw-detail = (sport) ->
+    <~ draw-all sport
+    console.log sport
+    max = Math.max ...sport.yearlyEvents.map (.events.length)
+    y.domain [0 max]
+
+    paths = graph.selectAll "g.sport"
+    activeGroups = paths.filter -> it == sport
+    inactiveGroups = paths.filter -> it != sport
+    activeGroups.select \path
+        ..transition!
+            ..duration 800
+            ..attr \d ~> detailArea it.yearlyEvents
+    inactiveGroups
+        ..attr \transform "translate(0, 0)"
+        ..transition!
+            ..duration 800
+            ..attr \transform "translate(0, -#{height * 1.5})"
+
+
 
 draw-all!
 draw-x-axis!
+
+
+draw-detail sports.1
