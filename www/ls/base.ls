@@ -30,8 +30,14 @@ width = window.innerWidth
 max = sports.reduce do
     (sum, sport) -> sum += sport.yearlyEvents[* - 1].events.length
     0
+colors = <[#e41a1c #377eb8 #4daf4a #984ea3 #ff7f00 #ffff33 #a65628 #f781bf #4daf4a #984ea3 ]>
+grayscaleColors = colors.map utils.to-grayscale
+
 color = d3.scale.ordinal!
-    ..range <[#e41a1c #377eb8 #4daf4a #984ea3 #ff7f00 #ffff33 #a65628 #f781bf #999999 #4daf4a #984ea3 ]>
+    ..range colors
+
+grayscaleColor = d3.scale.ordinal!
+    ..range grayscaleColors
 
 x = d3.scale.linear!
     ..domain [1908 2014]
