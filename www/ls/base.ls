@@ -1,3 +1,4 @@
+new Tooltip!watchElements!
 get-ordered-games = ([row]) ->
     fields = for field of row
         location = field
@@ -8,81 +9,65 @@ get-ordered-games = ([row]) ->
 
 (err, data) <~ d3.csv "../data/discipliny.csv"
 orderedGames = get-ordered-games data
-orderedGames.unshift {location: null, year: null}
-gamesLength = orderedGames.length
 lastSport = null
-events = data.map (event) ->
+sports = []
+data.forEach (event) ->
     if event["Sport"]
-        lastSport := that
-    sport = lastSport
-    occurences = for {location}, index in orderedGames
+        name = that
+        yearlyEvents = orderedGames.map ({location, year})-> {location, year, events: []}
+        sport = {name, yearlyEvents}
+        lastSport := sport
+        sports.push lastSport
+
+    for {location, year}, index in orderedGames
         name = event[location]
         continue if not name
         locationId = index
-        {name, locationId}
-    occurences = null unless occurences.length
-    {sport, occurences}
-events .= filter (.occurences)
-events .= sort (a, b) ->
-    | a.sport > b.sport =>  1
-    | a.sport < b.sport => -1
-    | a.occurences.0.locationId - b.occurences.0.locationId => that
+        lastSport.yearlyEvents[index].events.push name
 
-lastParents = []
-root = {name: "root", children: []}
-rootChildren = root.children
-lastSport = null
-events.forEach (event) ->
-    if lastSport != event.sport
-        lastSport := event.sport
-        node = {name: event.sport, children: []}
-        lastLocationId = event.occurences.0.locationId
-        orderedGames.forEach (location, index) ->
-            lastParents[index] := node
-        rootChildren.push node
-    event.occurences.forEach ({name, locationId}) ->
-        parent = lastParents[locationId]
-        node = {name, children: []}
-        parent.children.push node
-        for index in [locationId til gamesLength]
-            lastParents[index] := node
+height = window.innerHeight
+width = window.innerWidth
+max = sports.reduce do
+    (sum, sport) -> sum += sport.yearlyEvents[* - 1].events.length
+    0
+color = d3.scale.ordinal!
+    ..range <[#e41a1c #377eb8 #4daf4a #984ea3 #ff7f00 #ffff33 #a65628 #f781bf #999999 #4daf4a #984ea3 ]>
 
-window.root = root
-return
-# console.log root
-width = 8000
-height = 2200
-cluster = d3.layout.cluster!
-    ..size [height, width]
+x = d3.scale.linear!
+    ..domain [1908 2014]
+    ..range [0 width]
 
-diagonal = d3.svg.diagonal!
-    ..projection (d) -> [d.y, d.x]
+y = d3.scale.linear!
+    ..domain [0 max]
+    ..range [height, 0]
 
-svg = d3.select "body" .append "svg"
-    ..attr "width", width
-    ..attr "height", height
+stack = d3.layout.stack!
+    ..values (sport) -> sport.yearlyEvents
+    ..x (yearlyEvents) -> yearlyEvents.year
+    ..y (yearlyEvents) -> yearlyEvents.events.length
+    ..order \inside-out
+stack sports
 
-nodes = cluster.nodes root
-links = cluster.links nodes
+sports .= sort (a, b) ->
+    aLastEvent = a.yearlyEvents[* - 8]
+    bLastEvent = b.yearlyEvents[* - 8]
+    aLastEvent.y0 - bLastEvent.y0
 
-link = svg.selectAll ".link" .data links
-    ..enter!append "path"
-        ..attr "class", "link"
-        ..attr "d", diagonal
+area = d3.svg.area!
+    ..x (yearlyEvents) ~> x yearlyEvents.year
+    ..y1 (yearlyEvents) ~> y yearlyEvents.y0 + yearlyEvents.y
+    ..y0 (yearlyEvents) ~> y yearlyEvents.y0
+    ..interpolate \monotone
 
-node = svg.selectAll ".node" .data nodes
-    ..enter!append "g"
-        ..attr "class", "node"
-        ..attr "transform" (d) -> "translate(" + d.y + "," + d.x + ")"
+svg = d3.select \.discipliny .append \svg
+    ..attr \width width
+    ..attr \height height
 
-node.append "circle"
-    .attr "r", 4.5
+svg.selectAll \path.sport .data sports
+    ..enter!append \path
+        ..attr \class \sport
+        ..attr \d ~> area it.yearlyEvents
+        ..attr \data-tooltip (.name)
+        ..style \fill (d, index) -> color index
 
-node.append "text"
-    .attr "dx", (d) -> if d.children then -8 else 8
-    .attr "dy", 3
-    .style "text-anchor", (d) -> if d.children then "end" else "start"
-    .text (.name)
-
-
-# d3.select(self.frameElement).style("height", height + "px");
+console.log sports
