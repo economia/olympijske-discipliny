@@ -102,10 +102,11 @@ draw-x-axis = ->
 
 firstDrawComplete = no
 draw-all = (selected = null) ->
-    graph.selectAll \path.sport .data sports
-        ..enter!append \path
+    graph.selectAll \g.sport .data sports
+        ..enter!append \g
             ..attr \class \sport
-    path = graph.selectAll \path.sport
+            ..append \path
+    path = graph.selectAll "g.sport path"
         ..attr \d ~> area it.yearlyEvents
         ..attr \data-tooltip (.name)
     fillContainer = switch firstDrawComplete
