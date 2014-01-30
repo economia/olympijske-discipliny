@@ -134,7 +134,6 @@ draw-all = (selected = null, cb) ->
 
 draw-detail = (sport) ->
     <~ draw-all sport
-    console.log sport
     max = Math.max ...sport.yearlyEvents.map (.events.length)
     y.domain [0 max]
 
@@ -150,6 +149,57 @@ draw-detail = (sport) ->
         ..transition!
             ..duration 800
             ..attr \transform "translate(0, -#{height * 1.5})"
+
+    events = []
+    events_assoc = {}
+    for {events:yearlyEvents, year} in sport.yearlyEvents
+        for eventName in yearlyEvents
+            if not events_assoc[eventName]
+                event = {name: eventName, years: []}
+                events_assoc[eventName] = event
+                events.push event
+    for event in events
+        event.games = sport.yearlyEvents.map (game) ->
+            present = event.name in game.events
+            {game, present}
+        event.gamesPresent = event.games.filter (.present)
+    events .= sort (a, b) ->
+        a.gamesPresent.0.game.year - b.gamesPresent.0.game.year
+
+    stack = d3.layout.stack!
+        ..values (event) -> event.games
+        ..x (game) -> game.game.year
+        ..y (game) -> if game.present then 1 else 0
+    stack events
+    baseColor = color sports.indexOf sport
+    len = events.length
+    hueStep = 5
+    hue = Color baseColor .hue!
+    hue -= Math.round hueStep * len / 2
+    if hue < 0 then hue += 360
+    for event, i in events
+        newHue = hue + i * hueStep
+        if newHue > 360 then newHue -= 360
+        event.color = Color baseColor .hue newHue .hexString!
+
+    eventColor = d3.scale.ordinal!
+        ..range colors
+
+    graph.selectAll \g.event .data events
+        ..enter!append \g
+            ..attr \class \event
+            ..append \path
+
+    area = d3.svg.area!
+        ..x (game) ~> x game.game.year
+        ..y1 (game) ~> y game.y0 + game.y
+        ..y0 (game) ~> y game.y0
+        ..interpolate \basis
+
+    path = graph.selectAll "g.event path"
+        ..attr \d ~> area it.games
+        ..attr \fill (.color)
+        ..attr \data-tooltip (.name)
 
 
 
