@@ -38,7 +38,7 @@ width = fullWidth - margin.left - margin.right
 sumOfEvents = sports.reduce do
     (sum, sport) -> sum += Math.sqrt sport.yearlyEvents[* - 1].events.length
     0
-colors = <[#e41a1c #377eb8 #4daf4a #984ea3 #ff7f00 #377eb8 #a65628 #f781bf #4daf4a #984ea3 ]>
+colors = <[#e41a1c #377eb8 #4daf4a #984ea3 #ff7f00 #377eb8 #a65628 #f781bf #984ea3 ]>
 grayscaleColors = colors.map ig.utils.to-grayscale
 
 
