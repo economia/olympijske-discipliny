@@ -137,9 +137,9 @@ draw-detail = (sport) ->
     max = Math.max ...sport.yearlyEvents.map (.events.length)
     y.domain [0 max]
 
-    paths = graph.selectAll "g.sport"
-    activeGroups = paths.filter -> it == sport
-    inactiveGroups = paths.filter -> it != sport
+    allGroups = graph.selectAll "g.sport"
+    activeGroups = allGroups.filter -> it == sport
+    inactiveGroups = allGroups.filter -> it != sport
     activeGroups.select \path
         ..transition!
             ..duration 800
