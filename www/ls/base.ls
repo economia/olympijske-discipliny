@@ -36,7 +36,7 @@ fullWidth = 970 # window.innerWidth
 height = fullHeight - margin.bottom - margin.top
 width = fullWidth - margin.left - margin.right
 sumOfEvents = sports.reduce do
-    (sum, sport) -> sum += sport.yearlyEvents[* - 1].events.length
+    (sum, sport) -> sum += Math.sqrt sport.yearlyEvents[* - 1].events.length
     0
 colors = <[#e41a1c #377eb8 #4daf4a #984ea3 #ff7f00 #377eb8 #a65628 #f781bf #4daf4a #984ea3 ]>
 grayscaleColors = colors.map ig.utils.to-grayscale
@@ -59,7 +59,7 @@ y = d3.scale.linear!
 stack = d3.layout.stack!
     ..values (sport) -> sport.yearlyEvents
     ..x (yearlyEvents) -> yearlyEvents.year
-    ..y (yearlyEvents) -> yearlyEvents.events.length
+    ..y (yearlyEvents) -> Math.sqrt yearlyEvents.events.length
     ..order \inside-out
 stack sports
 
@@ -78,7 +78,7 @@ area = d3.svg.area!
 
 detailArea = d3.svg.area!
     ..x (yearlyEvents) ~> x yearlyEvents.year
-    ..y1 (yearlyEvents) ~> y yearlyEvents.y
+    ..y1 (yearlyEvents) ~> y yearlyEvents.y ** 2
     ..y0 (yearlyEvents) ~> y 0
     ..interpolate \basis
 
@@ -231,3 +231,4 @@ redraw-all = ->
 
 draw-all!
 draw-x-axis!
+
