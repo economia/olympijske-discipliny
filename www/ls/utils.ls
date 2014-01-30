@@ -5,7 +5,9 @@ utils.to-grayscale = (input) ->
     color.greyscale!hexString!
 
 utils.proxyAddr = (addr) ->
-    "/site/api/cs/proxies/detail/?url=http://datasklad.ihned.cz/#{ig.projectName}/#addr"
+    switch window.location.host in <[service.ihned.cz datasklad.ihned.cz]>
+    | yes => "../#{addr}"
+    | no  => "/site/api/cs/proxies/detail/?url=http://datasklad.ihned.cz/#{ig.projectName}/#addr"
 
 d3.pCsv = ->
     arguments[0] = utils.proxyAddr arguments[0]
