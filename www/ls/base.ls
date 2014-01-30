@@ -177,6 +177,7 @@ draw-detail = (sport) ->
     hue = Color baseColor .hue!
     if hue < 0 then hue += 360
     for event, i in events
+        i = len - i
         percentage = i / len / 3
         newHue = hue + i * hueStep
         if newHue > 360 then newHue -= 360
@@ -188,23 +189,26 @@ draw-detail = (sport) ->
     eventColor = d3.scale.ordinal!
         ..range colors
 
-    graph.selectAll \g.event .data events
-        ..enter!append \g
-            ..attr \class \event
-            ..append \path
-
     area = d3.svg.area!
         ..x (game) ~> x game.game.year
         ..y1 (game) ~> y game.y0 + game.y
         ..y0 (game) ~> y game.y0
         ..interpolate \basis
 
+    graph.selectAll \g.event .data events
+        ..enter!append \g
+            ..attr \class \event
+            ..append \path
+                ..style \opacity 0
+
     path = graph.selectAll "g.event path"
         ..attr \d ~> area it.games
         ..attr \fill (.color)
         ..attr \data-tooltip (.name)
-
-
+        ..transition!
+            ..delay (d, i) -> 500 + len * 50 - i * 50
+            ..duration 800
+            ..style \opacity 1
 
 draw-all!
 draw-x-axis!
