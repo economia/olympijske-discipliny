@@ -219,13 +219,14 @@ redraw-all = ->
     allGroups = graph.selectAll "g.sport"
     allGroups.select \path .style \opacity 1
     maxDelay = 0
-    graph.selectAll "g.event"
+    eventGroup = graph.selectAll "g.event"
         ..style \opacity 1
         ..transition!
             ..delay (d, i) -> maxDelay := i * 40
             ..duration 200
             ..style \opacity 0
     <~ setTimeout _, maxDelay + 400
+    eventGroup.remove!
     graph.selectAll \g.sport
         ..transition!
             ..duration 800
