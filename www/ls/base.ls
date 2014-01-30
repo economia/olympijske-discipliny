@@ -1,4 +1,5 @@
 new Tooltip!watchElements!
+_gaq?.push(['_trackEvent', 'ig', ig.projectName]);
 get-ordered-games = ([row]) ->
     fields = for field of row
         location = field
@@ -7,7 +8,7 @@ get-ordered-games = ([row]) ->
         {location, year}
     fields.sort (a, b) -> a.year - b.year
 
-(err, data) <~ d3.csv "../data/discipliny.csv"
+(err, data) <~ d3.pCsv "/data/discipliny.csv"
 orderedGames = get-ordered-games data
 lastSport = null
 sports = []
@@ -38,7 +39,7 @@ sumOfEvents = sports.reduce do
     (sum, sport) -> sum += sport.yearlyEvents[* - 1].events.length
     0
 colors = <[#e41a1c #377eb8 #4daf4a #984ea3 #ff7f00 #ffff33 #a65628 #f781bf #4daf4a #984ea3 ]>
-grayscaleColors = colors.map utils.to-grayscale
+grayscaleColors = colors.map ig.utils.to-grayscale
 
 
 color = d3.scale.ordinal!
@@ -73,15 +74,15 @@ area = d3.svg.area!
     ..x (yearlyEvents) ~> x yearlyEvents.year
     ..y1 (yearlyEvents) ~> y yearlyEvents.y0 + yearlyEvents.y
     ..y0 (yearlyEvents) ~> y yearlyEvents.y0
-    ..interpolate \monotone
+    ..interpolate \basis
 
 detailArea = d3.svg.area!
     ..x (yearlyEvents) ~> x yearlyEvents.year
     ..y1 (yearlyEvents) ~> y yearlyEvents.y
     ..y0 (yearlyEvents) ~> y 0
-    ..interpolate \monotone
+    ..interpolate \basis
 
-svg = d3.select \.discipliny .append \svg
+svg = d3.select ig.containers['discipliny'] .append \svg
     ..attr \width fullWidth
     ..attr \height fullHeight
 drawing = svg.append \g

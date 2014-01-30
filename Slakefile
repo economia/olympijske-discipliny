@@ -13,6 +13,7 @@ externalStyles =
     \http://service.ihned.cz/js/tooltip/v1.1.2.css
     ...
 
+preferScripts = <[ init.js ]>
 deferScripts = <[ base.js ]>
 gzippable = <[ ]>
 build-styles = (options = {}) ->
@@ -79,6 +80,11 @@ combine-scripts = (options = {}, cb) ->
     files .= sort (a, b) ->
         indexA = deferScripts.indexOf a
         indexB = deferScripts.indexOf b
+        if indexA == -1 and -1 != preferScripts.indexOf a
+            indexA = -2 + -1 * preferScripts.indexOf a
+        if indexB == -1 and -1 != preferScripts.indexOf b
+            indexB = -2 + -1 * preferScripts.indexOf b
+
         indexA - indexB
     files .= map -> "./www/js/#it"
     minifyOptions = {}
