@@ -115,6 +115,7 @@ draw-all = (selected = null, cb) ->
             ..append \path
     path = graph.selectAll "g.sport path"
         ..attr \data-tooltip (.name)
+        ..on \click -> draw-detail it
     fillContainer = switch firstDrawComplete
         | yes => path.transition!duration 800
         | no  => path
