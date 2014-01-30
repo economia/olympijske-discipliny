@@ -21,8 +21,8 @@ if div
         ..setAttribute \rel \stylesheet
         ..setAttribute \type \text/css
 
-    server = switch window.location.host in <[127.0.0.1 localhost]>
-        | yes => "http://127.0.0.1"
+    server = switch window.location.host in <[127.0.0.1 localhost hn.sulek.eu service.ihned.cz datasklad.ihned.cz]>
+        | yes => ""
         | no => "http://datasklad.ihned.cz"
     style.href = server + "/#{ig.projectName}/www/screen.css"
     div.parentNode.insertBefore style, div
