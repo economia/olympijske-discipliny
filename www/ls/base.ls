@@ -234,10 +234,30 @@ redraw-all = ->
             ..attr \transform "translate(0, 0)"
     draw-all!
 
+draw-story = (index) ->
+    story = ig.stories[index]
+    storyContainer
+        ..select \h2 .html story.header
+        ..select \p .html story.content
+        ..select \div .html story.attachment || ""
+    storySelector.classed \active (d, i) -> i == index
+
 backButton = d3.select ig.containers['discipliny'] .append \a
     ..attr \class "backButton disabled"
     ..on \click redraw-all
 
+storyContainer = d3.select ig.containers['discipliny'] .append \div
+    ..attr \class "stories"
+    ..append \h2
+    ..append \p
+    ..append \div
+        ..attr \class \attachment
+storySelector = d3.select ig.containers['discipliny'] .append \ul
+    .attr \class \stories
+    .selectAll \li .data ig.stories
+        .enter!append \li
+            .html (d, i) -> i + 1
+            .on \click (d, i) -> draw-story i
 draw-all!
 draw-x-axis!
 
@@ -245,3 +265,5 @@ ig.utils.draw-bg do
     ig.containers['discipliny']
     top: -3px
     bottom: -1 * margin.bottom + 3
+
+draw-story 0
