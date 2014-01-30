@@ -173,14 +173,17 @@ draw-detail = (sport) ->
     stack events
     baseColor = color sports.indexOf sport
     len = events.length
-    hueStep = 5
+    hueStep = 2
     hue = Color baseColor .hue!
-    hue -= Math.round hueStep * len / 2
     if hue < 0 then hue += 360
     for event, i in events
+        percentage = i / len / 3
         newHue = hue + i * hueStep
         if newHue > 360 then newHue -= 360
-        event.color = Color baseColor .hue newHue .hexString!
+        event.color = Color baseColor
+            .darken percentage
+            .hue newHue
+            .hexString!
 
     eventColor = d3.scale.ordinal!
         ..range colors
