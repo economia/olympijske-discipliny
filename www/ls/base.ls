@@ -114,13 +114,13 @@ draw-all = (selected = null, cb) ->
             ..attr \class \sport
             ..append \path
     path = graph.selectAll "g.sport path"
-        ..attr \d ~> area it.yearlyEvents
         ..attr \data-tooltip (.name)
     fillContainer = switch firstDrawComplete
         | yes => path.transition!duration 800
         | no  => path
 
     fillContainer
+        ..attr \d ~> area it.yearlyEvents
         ..style \fill (d) ->
             | selected != null and selected != d => grayscaleColor d.color
             | otherwise => color d.color
@@ -209,9 +209,25 @@ draw-detail = (sport) ->
             ..delay (d, i) -> 500 + len * 50 - i * 50
             ..duration 800
             ..style \opacity 1
+    <~ setTimeout _, 500 + 800 + len * 50
+    activeGroups.select \path .style \opacity 0
+
+redraw-all = ->
+    allGroups = graph.selectAll "g.sport"
+    allGroups.select \path .style \opacity 1
+    maxDelay = 0
+    graph.selectAll "g.event"
+        ..style \opacity 1
+        ..transition!
+            ..delay (d, i) -> maxDelay := i * 40
+            ..duration 200
+            ..style \opacity 0
+    <~ setTimeout _, maxDelay + 400
+    graph.selectAll \g.sport
+        ..transition!
+            ..duration 800
+            ..attr \transform "translate(0, 0)"
+    draw-all!
 
 draw-all!
 draw-x-axis!
-
-
-draw-detail sports.1
