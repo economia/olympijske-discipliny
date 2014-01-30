@@ -134,6 +134,7 @@ draw-all = (selected = null, cb) ->
     firstDrawComplete := yes
 
 draw-detail = (sport) ->
+    backButton.classed \disabled no
     <~ draw-all sport
     max = Math.max ...sport.yearlyEvents.map (.events.length)
     y.domain [0 max]
@@ -214,6 +215,7 @@ draw-detail = (sport) ->
     activeGroups.select \path .style \opacity 0
 
 redraw-all = ->
+    backButton.classed \disabled yes
     allGroups = graph.selectAll "g.sport"
     allGroups.select \path .style \opacity 1
     maxDelay = 0
@@ -229,6 +231,10 @@ redraw-all = ->
             ..duration 800
             ..attr \transform "translate(0, 0)"
     draw-all!
+
+backButton = d3.select ig.containers['discipliny'] .append \a
+    ..attr \class "backButton disabled"
+    ..on \click redraw-all
 
 draw-all!
 draw-x-axis!

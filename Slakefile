@@ -10,7 +10,7 @@ externalScripts =
     ...
 
 externalStyles =
-    \http://service.ihned.cz/js/tooltip/v1.1.2.css
+    \http://service.ihned.cz/js/tooltip/v1.1.3.css
     ...
 
 preferScripts = <[ init.js ]>
