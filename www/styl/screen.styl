@@ -5,6 +5,8 @@
     @import basics
 .ig
     svg
+        position relative
+        z-index 2
         path
             stroke white
             stroke-opacity 0.3
@@ -23,7 +25,12 @@
 
     .backButton
         @import backButton
-
+    .backButton
+        z-index 4
+    .stories
+        z-index 3
+        opacity 1
+        transition opacity 0.8s
     div.stories
         position absolute
         top 42px
@@ -71,7 +78,11 @@
                 background lighten(HNBlue, 50%)
                 font-weight bold
                 border-color darken(HNBlue, 10%)
-
+    &.detail
+        .stories
+            z-index 1
+            opacity 0
+            // display none
 
 
 

@@ -135,6 +135,7 @@ draw-all = (selected = null, cb) ->
     firstDrawComplete := yes
 
 draw-detail = (sport) ->
+    d3.select ig.containers['discipliny'] .classed \detail yes
     backButton.classed \disabled no
     <~ draw-all sport
     max = Math.max ...sport.yearlyEvents.map (.events.length)
@@ -216,6 +217,7 @@ draw-detail = (sport) ->
     activeGroups.select \path .style \opacity 0
 
 redraw-all = ->
+    d3.select ig.containers['discipliny'] .classed \detail no
     backButton.classed \disabled yes
     allGroups = graph.selectAll "g.sport"
     allGroups.select \path .style \opacity 1
