@@ -30,9 +30,9 @@ margin =
     top: 0
     right: 0
     bottom: 30
-    left: 20
-fullHeight = 650 # window.innerHeight
-fullWidth = 970 # window.innerWidth
+    left: 0
+fullHeight = ig.containers['discipliny'].offsetHeight
+fullWidth = ig.containers['discipliny'].offsetWidth
 height = fullHeight - margin.bottom - margin.top
 width = fullWidth - margin.left - margin.right
 sumOfEvents = sports.reduce do
@@ -105,6 +105,7 @@ draw-x-axis = ->
         ..call xAxis
         ..selectAll "text"
             ..attr \dy 21
+            ..attr \dx (d, i) -> if i == 0 then 5 else 0
 
 firstDrawComplete = no
 draw-all = (selected = null, cb) ->
@@ -240,3 +241,7 @@ backButton = d3.select ig.containers['discipliny'] .append \a
 draw-all!
 draw-x-axis!
 
+ig.utils.draw-bg do
+    ig.containers['discipliny']
+    top: -3px
+    bottom: -1 * margin.bottom + 3
