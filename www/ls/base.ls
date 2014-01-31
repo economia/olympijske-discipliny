@@ -160,6 +160,7 @@ draw-all = (selected = null, cb) ->
 draw-detail = (sport) ->
     d3.select ig.containers['discipliny'] .classed \detail yes
     backButton.classed \disabled no
+    detailHeader.text sport.name
     <~ draw-all sport
     max = Math.max ...sport.yearlyEvents.map (.events.length)
     if max < 5 then max = 5
@@ -324,5 +325,5 @@ ig.utils.draw-bg do
     ig.containers['discipliny']
     top: -3px
     bottom: -1 * margin.bottom + 3
-
+detailHeader = d3.select ig.containers['discipliny'] .append \h1
 draw-story 0
