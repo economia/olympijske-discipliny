@@ -276,6 +276,12 @@ draw-story = (index) ->
     storySelector.classed \active (d, i) -> i == index
     lastStory.index = index
     lastStory.element = newStoryElement
+    if story.detail
+        draw-detail sports[that]
+    else if story.highlight
+        draw-all sports[that]
+    else
+        draw-all!
     return if lastStoryIndex == -1
     if lastStoryIndex < index
         newStoryElement.classed \left true
