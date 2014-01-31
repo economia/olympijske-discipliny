@@ -3,7 +3,7 @@ ig.stories =
         content: "Hitler dostal na zimní olympiádu bavorský curling, Sověti ženské rychlobruslení. Jak měnila olympiádu mezinárodní politika? A jaké disciplíny se objeví letos?"
     *   header: "1908, krasobruslení"
         content: 'Krasobruslení se stalo olympijským sportem šestnáct let před první zimní olympiádou, poprvé se objevilo už na letních hrách v Londýně 1908. Už tehdy se závodilo víceméně v těch disciplínách, jaké známe dnes: soutěže jednotlivců a soutěž smíšených párů. Navíc se jely "speciální figury mužů", kde každý závodník předvedl dvě učebnicové polohy.'
-    *   attachment: '<iframe width="270" height="207" src="//www.youtube.com/embed/vx8ybkfze2U" frameborder="0" allowfullscreen></iframe>'
+    *   attachment: '<iframe width="390" height="300" src="//www.youtube.com/embed/vx8ybkfze2U" frameborder="0" allowfullscreen></iframe>'
         caption: "Krasobruslení na Londýnské olympiádě, 1908"
     *   header: "1920, lední hokej"
         content: "Také lední hokej se dostal nejprve na program letních her. Na první poválečné olympiádě v Antverpách 1920 se ho zúčastnilo pouze sedm týmů - i proto, že dohodové mocnosti v čele s Německem se her nesměly zúčastnit. Za Kanadu nastoupil tým Winnipeg Falcons (na fotce) a suverénně zvítězil. Československý tým prohrál s Kanadou 0:15, se Spojenými státy 0:16, přesto skončil třetí. "
