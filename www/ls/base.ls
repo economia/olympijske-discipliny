@@ -124,11 +124,11 @@ draw-x-axis = ->
             ..attr \class \name
             ..attr \dy 31
             ..attr \dx (d, i) -> switch i
-                | 0 => 19
+                | 0 => 22
                 | 17 => -4
                 | 18 => 4
                 | 22 => -3
-                | 23 => -15
+                | 23 => -16
                 | otherwise => 0
             ..text -> gameNames[it]
 highlightedYear = null
