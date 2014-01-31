@@ -76,13 +76,13 @@ area = d3.svg.area!
     ..x (yearlyEvents) ~> x yearlyEvents.year
     ..y1 (yearlyEvents) ~> y yearlyEvents.y0 + yearlyEvents.y
     ..y0 (yearlyEvents) ~> y yearlyEvents.y0
-    ..interpolate \basis
+    ..interpolate \cardinal
 
 detailArea = d3.svg.area!
     ..x (yearlyEvents) ~> x yearlyEvents.year
     ..y1 (yearlyEvents) ~> y yearlyEvents.y ** 2
     ..y0 (yearlyEvents) ~> y 0
-    ..interpolate \basis
+    ..interpolate \monotone
 
 svg = d3.select ig.containers['discipliny'] .append \svg
     ..attr \width fullWidth
@@ -219,7 +219,7 @@ draw-detail = (sport) ->
         ..x (game) ~> x game.game.year
         ..y1 (game) ~> y game.y0 + game.y
         ..y0 (game) ~> y game.y0
-        ..interpolate \basis
+        ..interpolate \monotone
 
     graph.selectAll \g.event .data events
         ..enter!append \g
