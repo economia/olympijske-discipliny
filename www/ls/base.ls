@@ -334,7 +334,7 @@ ig.utils.draw-bg do
     bottom: -1 * margin.bottom + 3
 detailHeader = container.append \h1
 draw-story 0
-container.on \mousemove ->
+drawing.on \mousemove ->
     left = d3.event.x - ig.utils.offset ig.containers['discipliny'] .left
     domain = 2014 - 1908
     range = width
@@ -347,3 +347,4 @@ container.on \mousemove ->
         lastDiff = diff
         closestYear = year
     highlight-year closestYear
+drawing.on \mouseout -> highlight-year null
