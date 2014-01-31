@@ -3,9 +3,11 @@ _gaq?.push(['_trackEvent', 'ig', ig.projectName]);
 get-ordered-games = ([row]) ->
     fields = for field of row
         location = field
-        year = field.split " " .pop! |> parseInt _, 10
+        [...locationParts, year] = field.split " "
+        year = parseInt year, 10
+        locationName = locationParts.join " "
         continue unless year
-        {location, year}
+        {location, locationName, year}
     fields.sort (a, b) -> a.year - b.year
 
 (err, data) <~ d3.pCsv "/data/discipliny.csv"
@@ -90,22 +92,42 @@ drawing = svg.append \g
     ..attr \transform "translate(#{margin.left}, #{margin.top})"
 graph = drawing.append \g
     ..attr \class \graph
-
+gameNames = {}
+orderedGames.forEach ({year, locationName}) -> gameNames[year] = locationName
 draw-x-axis = ->
     xAxis = d3.svg.axis!
         ..scale x
         ..tickFormat -> it
-        ..tickSize 4
-        ..ticks 10
+        ..tickSize 2
+        ..tickValues orderedGames.map (.year)
         ..outerTickSize 0
         ..orient \bottom
     xAxisGroup = drawing.append \g
         ..attr \class "axis x"
         ..attr \transform "translate(0, #{height})"
         ..call xAxis
-        ..selectAll "text"
-            ..attr \dy 21
-            ..attr \dx (d, i) -> if i == 0 then 5 else 0
+        ..selectAll \g.tick
+            ..select "text"
+                ..attr \class \year
+                ..attr \dy 8
+                ..attr \dx (d, i) -> switch i
+                    | 0 => 12
+                    | 17 => -4
+                    | 18 => 4
+                    | 22 => -3
+                    | 23 => -11
+                    | otherwise => 0
+            ..append \text
+                ..attr \class \name
+                ..attr \dy 25
+                ..attr \dx (d, i) -> switch i
+                    | 0 => 19
+                    | 17 => -4
+                    | 18 => 4
+                    | 22 => -3
+                    | 23 => -15
+                    | otherwise => 0
+                ..html -> gameNames[it]
 
 firstDrawComplete = no
 draw-all = (selected = null, cb) ->

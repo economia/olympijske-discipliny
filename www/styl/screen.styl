@@ -17,10 +17,18 @@
         .axis
             .tick
                 line
-                    stroke transparent
+                    stroke #888
+                    shape-rendering crispEdges
                 text
-                    fill #555
-                    font-size 1.3em
+                    fill #888
+                    font-size 0.7em
+                text.name
+                    text-anchor middle
+                    display none
+            .tick:hover
+                cursor default
+                text.name
+                    display block
 
 
     .backButton
