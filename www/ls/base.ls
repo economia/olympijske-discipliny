@@ -274,20 +274,33 @@ redraw-all = ->
     draw-all!
 
 lastStory = {index: -1, element: null}
-draw-story = (index) ->
-    return if index == lastStory.index
-    index %%= ig.stories.length
-    story = ig.stories[index]
-    newStoryElement = storyContainer.append \div
-        ..attr \class \story
-    lastStoryElement = lastStory.element
-    lastStoryIndex = lastStory.index
+nextStory = {index: null, element: null, timeout: null}
+prepare-story-element = (story) ->
+    newStoryElement = d3.select document.createElement \div
+    if lastStory.index == -1
+        newStoryElement.attr \class "story"
+    else
+        newStoryElement.attr \class "story left"
     newStoryElement.append \h2 .html that if story.header
     newStoryElement.append \p .html that if story.content
     if story.attachment
         figure = newStoryElement.append \figure .html that
         if story.caption
             figure.append \figcaption .html that
+    newStoryElement
+
+draw-story = (index) ->
+    return if index == lastStory.index
+    index %%= ig.stories.length
+    story = ig.stories[index]
+    if index == nextStory.index
+        newStoryElement = nextStory.element
+    else
+        newStoryElement = prepare-story-element story
+        storyContainer.0.0.appendChild newStoryElement.0.0
+    lastStoryElement = lastStory.element
+    lastStoryIndex = lastStory.index
+
     storySelector.classed \active (d, i) -> i == Math.floor index / 2
     lastStory.index = index
     lastStory.element = newStoryElement
@@ -299,17 +312,25 @@ draw-story = (index) ->
         draw-all that.map -> sports[it]
     else
         draw-all!
+    clearTimeout that if nextStory.timeout
+    nextStory.timeout = setTimeout do
+        ->
+            nextStory.index = (index + 1) %% ig.stories.length
+            nextStory.element = prepare-story-element ig.stories[nextStory.index]
+            storyContainer.0.0.appendChild nextStory.element.0.0
+            nextStory.timeout = null
+        600
     return if lastStoryIndex == -1
     if lastStoryIndex < index
-        newStoryElement.classed \left true
         lastStoryElement?classed \right true
     else
-        newStoryElement.classed \right true
+        newStoryElement.attr \class 'story right'
         lastStoryElement?classed \left true
-    <~ setTimeout _, 0
-    newStoryElement.attr \class \story
-    <~ setTimeout _, 800
-    lastStoryElement.remove!
+    setTimeout do
+        -> newStoryElement.attr \class \story
+        0
+
+    setTimeout lastStoryElement~remove, 800
 
 backButton = container.append \a
     ..attr \class "backButton disabled"
