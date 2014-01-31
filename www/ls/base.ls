@@ -304,5 +304,3 @@ ig.utils.draw-bg do
     bottom: -1 * margin.bottom + 3
 
 draw-story 0
-<~ setTimeout _, 100
-draw-story 1
