@@ -231,7 +231,10 @@ draw-detail = (sport) ->
     path = graph.selectAll "g.event path"
         ..attr \d ~> area it.games
         ..attr \fill (.color)
-        ..attr \data-tooltip (.name)
+        ..attr \data-tooltip ->
+            out = "<b>#{it.name}<br /></b>"
+            out += it.gamesPresent.map (.game.location) .join "<br />"
+            escape out
         ..transition!
             ..delay (d, i) -> 500 + len * 50 - i * 50
             ..duration 800
