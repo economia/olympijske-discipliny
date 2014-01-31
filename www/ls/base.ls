@@ -26,6 +26,7 @@ data.forEach (event) ->
         name = event[location]
         continue if not name
         locationId = index
+        name .= replace /^X:/ ""
         lastSport.yearlyEvents[index].events.push name
 
 margin =
