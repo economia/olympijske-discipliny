@@ -34,6 +34,7 @@ margin =
     right: 0
     bottom: 30
     left: 0
+container = d3.select ig.containers['discipliny']
 fullHeight = ig.containers['discipliny'].offsetHeight
 fullWidth = ig.containers['discipliny'].offsetWidth
 height = fullHeight - margin.bottom - margin.top
@@ -85,7 +86,7 @@ detailArea = d3.svg.area!
     ..y0 (yearlyEvents) ~> y 0
     ..interpolate \monotone
 
-svg = d3.select ig.containers['discipliny'] .append \svg
+svg = container.append \svg
     ..attr \width fullWidth
     ..attr \height fullHeight
 drawing = svg.append \g
@@ -158,7 +159,7 @@ draw-all = (selected = null, cb) ->
     firstDrawComplete := yes
 
 draw-detail = (sport) ->
-    d3.select ig.containers['discipliny'] .classed \detail yes
+    container.classed \detail yes
     backButton.classed \disabled no
     detailHeader.text sport.name
     <~ draw-all sport
@@ -245,7 +246,7 @@ draw-detail = (sport) ->
     activeGroups.select \path .style \opacity 0
 
 redraw-all = ->
-    d3.select ig.containers['discipliny'] .classed \detail no
+    container.classed \detail no
     backButton.classed \disabled yes
     allGroups = graph.selectAll "g.sport"
     allGroups.select \path .style \opacity 1
@@ -300,11 +301,11 @@ draw-story = (index) ->
     <~ setTimeout _, 800
     lastStoryElement.remove!
 
-backButton = d3.select ig.containers['discipliny'] .append \a
+backButton = container.append \a
     ..attr \class "backButton disabled"
     ..on \click redraw-all
 
-storyContainer = d3.select ig.containers['discipliny'] .append \div
+storyContainer = container.append \div
     ..attr \class "stories"
     ..append \div
         ..attr \class \nextButton
@@ -312,7 +313,7 @@ storyContainer = d3.select ig.containers['discipliny'] .append \div
         ..append \div
         ..append \div
         ..on \click -> draw-story lastStory.index + 1
-storySelector = d3.select ig.containers['discipliny'] .append \ul
+storySelector = container.append \ul
     .attr \class \stories
     .selectAll \li .data ig.stories
         .enter!append \li
@@ -325,5 +326,5 @@ ig.utils.draw-bg do
     ig.containers['discipliny']
     top: -3px
     bottom: -1 * margin.bottom + 3
-detailHeader = d3.select ig.containers['discipliny'] .append \h1
+detailHeader = container.append \h1
 draw-story 0
