@@ -32,7 +32,7 @@ data.forEach (event) ->
 margin =
     top: 0
     right: 0
-    bottom: 30
+    bottom: 37
     left: 0
 container = d3.select ig.containers['discipliny']
 fullHeight = ig.containers['discipliny'].offsetHeight
@@ -122,7 +122,7 @@ draw-x-axis = ->
                 | otherwise => 0
         ..append \text
             ..attr \class \name
-            ..attr \dy 25
+            ..attr \dy 31
             ..attr \dx (d, i) -> switch i
                 | 0 => 19
                 | 17 => -4
