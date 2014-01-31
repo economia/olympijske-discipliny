@@ -261,6 +261,7 @@ redraw-all = ->
 lastStory = {index: -1, element: null}
 draw-story = (index) ->
     return if index == lastStory.index
+    index %%= ig.stories.length
     story = ig.stories[index]
     newStoryElement = storyContainer.append \div
         ..attr \class \story
@@ -290,6 +291,12 @@ backButton = d3.select ig.containers['discipliny'] .append \a
 
 storyContainer = d3.select ig.containers['discipliny'] .append \div
     ..attr \class "stories"
+    ..append \div
+        ..attr \class \nextButton
+        ..append \div
+        ..append \div
+        ..append \div
+        ..on \click -> draw-story lastStory.index + 1
 storySelector = d3.select ig.containers['discipliny'] .append \ul
     .attr \class \stories
     .selectAll \li .data ig.stories
