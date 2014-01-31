@@ -162,6 +162,7 @@ draw-detail = (sport) ->
     backButton.classed \disabled no
     <~ draw-all sport
     max = Math.max ...sport.yearlyEvents.map (.events.length)
+    if max < 5 then max = 5
     y.domain [0 max]
 
     allGroups = graph.selectAll "g.sport"
