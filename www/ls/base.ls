@@ -258,13 +258,30 @@ redraw-all = ->
             ..attr \transform "translate(0, 0)"
     draw-all!
 
+lastStory = {index: -1, element: null}
 draw-story = (index) ->
+    return if index == lastStory.index
     story = ig.stories[index]
-    storyContainer
-        ..select \h2 .html story.header
-        ..select \p .html story.content
-        ..select \div .html story.attachment || ""
+    newStoryElement = storyContainer.append \div
+        ..attr \class \story
+    lastStoryElement = lastStory.element
+    if lastStory.index < index
+        newStoryElement.classed \left true
+        lastStoryElement?classed \right true
+    else
+        newStoryElement.classed \right true
+        lastStoryElement?classed \left true
+
+    newStoryElement.append \h2 .html story.header if story.header
+    newStoryElement.append \p .html story.content if story.content
+    newStoryElement.append \div .html story.attachment if story.attachment
     storySelector.classed \active (d, i) -> i == index
+    lastStory.index = index
+    lastStory.element = newStoryElement
+    <~ setTimeout _, 0
+    newStoryElement.attr \class \story
+    <~ setTimeout _, 800
+    lastStoryElement.remove!
 
 backButton = d3.select ig.containers['discipliny'] .append \a
     ..attr \class "backButton disabled"
@@ -272,10 +289,6 @@ backButton = d3.select ig.containers['discipliny'] .append \a
 
 storyContainer = d3.select ig.containers['discipliny'] .append \div
     ..attr \class "stories"
-    ..append \h2
-    ..append \p
-    ..append \div
-        ..attr \class \attachment
 storySelector = d3.select ig.containers['discipliny'] .append \ul
     .attr \class \stories
     .selectAll \li .data ig.stories
@@ -291,3 +304,5 @@ ig.utils.draw-bg do
     bottom: -1 * margin.bottom + 3
 
 draw-story 0
+<~ setTimeout _, 100
+draw-story 1

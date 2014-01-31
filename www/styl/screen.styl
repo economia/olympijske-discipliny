@@ -46,18 +46,31 @@
         width 690px
         margin-left 24px
         line-height 1.4em
-        h2
-            margin-top 0px
-        p
-            width 390px
-        .attachment
+        .story
             position absolute
             top 0px
-            right 0px
-            img
-                float right
-                max-width 270px
-                height auto
+            left 0px
+            opacity 1
+            transition left 0.8s, opacity 0.8s
+            &.left
+            &.right
+                opacity 0
+            &.left
+                left 700px
+            &.right
+                left -700px
+            h2
+                margin-top 0px
+            p
+                width 390px
+            .attachment
+                position absolute
+                top 0px
+                right 0px
+                img
+                    float right
+                    max-width 270px
+                    height auto
     ul.stories
         position absolute
         left 25px
