@@ -30,7 +30,7 @@ data.forEach (event) ->
         lastSport.yearlyEvents[index].events.push name
 
 margin =
-    top: 0
+    top: 20
     right: 0
     bottom: 37
     left: 0
@@ -139,6 +139,8 @@ highlight-year = (year) ->
 
 firstDrawComplete = no
 draw-all = (selected = null, cb) ->
+    if selected and typeof! selected != \Array
+        selected = [selected]
     y.domain [0 sumOfEvents]
     graph.selectAll \g.sport .data sports
         ..enter!append \g
@@ -154,10 +156,10 @@ draw-all = (selected = null, cb) ->
     fillContainer
         ..attr \d ~> area it.yearlyEvents
         ..style \fill (d) ->
-            | selected != null and selected != d => grayscaleColor d.color
+            | selected != null and d not in selected => grayscaleColor d.color
             | otherwise => color d.color
         ..style \fill-opacity (d) ->
-            | selected != null and selected != d => 0.3
+            | selected != null and d not in selected => 0.3
             | otherwise => 1
     if cb
         if firstDrawComplete then setTimeout cb, 800 else cb!
@@ -286,13 +288,15 @@ draw-story = (index) ->
         figure = newStoryElement.append \figure .html that
         if story.caption
             figure.append \figcaption .html that
-    storySelector.classed \active (d, i) -> i == index
+    storySelector.classed \active (d, i) -> i == Math.floor index / 2
     lastStory.index = index
     lastStory.element = newStoryElement
+    year = +ig.stories[index - index % 2].header.split ", " .0
+    highlight-year year
     if story.detail
         draw-detail sports[that]
     else if story.highlight
-        draw-all sports[that]
+        draw-all that.map -> sports[it]
     else
         draw-all!
     return if lastStoryIndex == -1
@@ -321,16 +325,16 @@ storyContainer = container.append \div
         ..on \click -> draw-story lastStory.index + 1
 storySelector = container.append \ul
     .attr \class \stories
-    .selectAll \li .data ig.stories
+    .selectAll \li .data ig.stories.filter (.header)
         .enter!append \li
-            .html (d, i) -> i + 1
-            .on \click (d, i) -> draw-story i
+            .html (d, i) -> d.header.split "," .0
+            .on \click (d, i) -> draw-story i * 2
 draw-all!
 draw-x-axis!
 
 ig.utils.draw-bg do
     ig.containers['discipliny']
-    top: -3px
+    top: -3px + margin.top
     bottom: -1 * margin.bottom + 3
 detailHeader = container.append \h1
 draw-story 0
@@ -348,3 +352,5 @@ drawing.on \mousemove ->
         closestYear = year
     highlight-year closestYear
 drawing.on \mouseout -> highlight-year null
+for sport, index in sports
+    console.log "#index : #{sport.name}"
