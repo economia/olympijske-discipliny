@@ -110,31 +110,34 @@
     ul.stories
         position absolute
         left 25px
-        top 0px
+        top 1px
         list-style-type none
         margin 0px
         padding 0px
         li
+            position relative
+            z-index 1
             padding 0px
             margin 0px
             float left
             display block
-            background #f6f6f6
-            border 1px solid #ccc
-            border-left 0px none
+            background #fafafa
+            outline 1px solid #e2e2e2
             font-size 0.8em
             padding 2px 8px
-            &:first-child
-                border-left 1px solid #ccc
+
             &:hover
+                z-index 3
                 cursor pointer
-                background lighten(HNBlue, 20%)
-                border-right-color HNBlue
+                background lighten(HNOrange, 78%)
+                outline-color lighten(HNOrange, 45%)
+            &.active
+                font-weight bold
             &:active
             &.active
-                background lighten(HNBlue, 50%)
-                font-weight bold
-                border-color darken(HNBlue, 10%)
+                z-index 2
+                background lighten(HNOrange, 85%)
+                outline-color lighten(HNOrange, 55%)
     &.detail
         .stories
             z-index 1
