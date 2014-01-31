@@ -265,19 +265,20 @@ draw-story = (index) ->
     newStoryElement = storyContainer.append \div
         ..attr \class \story
     lastStoryElement = lastStory.element
-    if lastStory.index < index
-        newStoryElement.classed \left true
-        lastStoryElement?classed \right true
-    else
-        newStoryElement.classed \right true
-        lastStoryElement?classed \left true
-
+    lastStoryIndex = lastStory.index
     newStoryElement.append \h2 .html story.header if story.header
     newStoryElement.append \p .html story.content if story.content
     newStoryElement.append \div .html story.attachment if story.attachment
     storySelector.classed \active (d, i) -> i == index
     lastStory.index = index
     lastStory.element = newStoryElement
+    return if lastStoryIndex == -1
+    if lastStoryIndex < index
+        newStoryElement.classed \left true
+        lastStoryElement?classed \right true
+    else
+        newStoryElement.classed \right true
+        lastStoryElement?classed \left true
     <~ setTimeout _, 0
     newStoryElement.attr \class \story
     <~ setTimeout _, 800
