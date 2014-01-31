@@ -267,9 +267,12 @@ draw-story = (index) ->
         ..attr \class \story
     lastStoryElement = lastStory.element
     lastStoryIndex = lastStory.index
-    newStoryElement.append \h2 .html story.header if story.header
-    newStoryElement.append \p .html story.content if story.content
-    newStoryElement.append \div .html story.attachment if story.attachment
+    newStoryElement.append \h2 .html that if story.header
+    newStoryElement.append \p .html that if story.content
+    if story.attachment
+        figure = newStoryElement.append \figure .html that
+        if story.caption
+            figure.append \figcaption .html that
     storySelector.classed \active (d, i) -> i == index
     lastStory.index = index
     lastStory.element = newStoryElement
