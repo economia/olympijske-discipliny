@@ -352,5 +352,8 @@ drawing.on \mousemove ->
         closestYear = year
     highlight-year closestYear
 drawing.on \mouseout -> highlight-year null
-for sport, index in sports
-    console.log "#index : #{sport.name}"
+d3.select document
+    ..on \keydown ->
+        switch d3.event.keyCode
+        | 39 => draw-story lastStory.index + 1
+        | 37 => draw-story lastStory.index - 1
