@@ -127,7 +127,7 @@ draw-x-axis = ->
                     | 22 => -3
                     | 23 => -15
                     | otherwise => 0
-                ..html -> gameNames[it]
+                ..text -> gameNames[it]
 
 firstDrawComplete = no
 draw-all = (selected = null, cb) ->
