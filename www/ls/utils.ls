@@ -30,3 +30,11 @@ utils.draw-bg = (element, padding = {}) ->
     ihned = document.querySelector '#ihned'
     if ihned
         that.parentNode.insertBefore bg, ihned
+utils.offset = (element, side) ->
+    top = 0
+    left = 0
+    do
+        top += element.offsetTop
+        left += element.offsetLeft
+    while element = element.offsetParent
+    {top, left}

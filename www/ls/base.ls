@@ -96,6 +96,7 @@ graph = drawing.append \g
     ..attr \class \graph
 gameNames = {}
 orderedGames.forEach ({year, locationName}) -> gameNames[year] = locationName
+xAxisTicks = null
 draw-x-axis = ->
     xAxis = d3.svg.axis!
         ..scale x
@@ -108,28 +109,33 @@ draw-x-axis = ->
         ..attr \class "axis x"
         ..attr \transform "translate(0, #{height})"
         ..call xAxis
-        ..selectAll \g.tick
-            ..select "text"
-                ..attr \class \year
-                ..attr \dy 8
-                ..attr \dx (d, i) -> switch i
-                    | 0 => 12
-                    | 17 => -4
-                    | 18 => 4
-                    | 22 => -3
-                    | 23 => -11
-                    | otherwise => 0
-            ..append \text
-                ..attr \class \name
-                ..attr \dy 25
-                ..attr \dx (d, i) -> switch i
-                    | 0 => 19
-                    | 17 => -4
-                    | 18 => 4
-                    | 22 => -3
-                    | 23 => -15
-                    | otherwise => 0
-                ..text -> gameNames[it]
+    xAxisTicks := xAxisGroup.selectAll \g.tick
+        ..select "text"
+            ..attr \class \year
+            ..attr \dy 8
+            ..attr \dx (d, i) -> switch i
+                | 0 => 12
+                | 17 => -4
+                | 18 => 4
+                | 22 => -3
+                | 23 => -11
+                | otherwise => 0
+        ..append \text
+            ..attr \class \name
+            ..attr \dy 25
+            ..attr \dx (d, i) -> switch i
+                | 0 => 19
+                | 17 => -4
+                | 18 => 4
+                | 22 => -3
+                | 23 => -15
+                | otherwise => 0
+            ..text -> gameNames[it]
+highlightedYear = null
+highlight-year = (year) ->
+    return if highlightedYear == year
+    highlightedYear := year
+    xAxisTicks.classed \active -> it == year
 
 firstDrawComplete = no
 draw-all = (selected = null, cb) ->
@@ -328,3 +334,16 @@ ig.utils.draw-bg do
     bottom: -1 * margin.bottom + 3
 detailHeader = container.append \h1
 draw-story 0
+container.on \mousemove ->
+    left = d3.event.x - ig.utils.offset ig.containers['discipliny'] .left
+    domain = 2014 - 1908
+    range = width
+    lastDiff = Infinity
+    closestYear = null
+    mouseYear = Math.round 1908 + domain * left / range
+    for {year}:game in orderedGames
+        diff = Math.abs mouseYear - year
+        break if diff > lastDiff
+        lastDiff = diff
+        closestYear = year
+    highlight-year closestYear
