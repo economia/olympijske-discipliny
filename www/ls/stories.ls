@@ -7,19 +7,19 @@ ig.stories =
     *   header: "1920, Antverpy"
         content: "Také lední hokej se dostal nejprve na program letních her. Na první poválečné olympiádě se ho zúčastnilo pouze sedm týmů - i proto, že dohodové mocnosti v čele s Německem na olympiádu nesměly. Za Kanadu nastoupil tým Winnipeg Falcons a suverénně zvítězil. Československý tým prohrál s Kanadou 0:15, se Spojenými státy 0:16, přesto skončil třetí."
         highlight: [15]
-    *   attachment: "<img src='http://upload.wikimedia.org/wikipedia/commons/c/c3/Winnipegfalcons.jpg' alt=''>"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/Winnipegfalcons.png' alt=''>"
         caption: "Kanadský hokejový tým Winnipeg Falcons na olympiádě v&nbsp;Antverpách"
         highlight: [15]
     *   header: "1924, Chamonix"
         content: 'Původně se ve Francii odehrál pouze "nezávislý týden zimních sportů", spojený s letní olympiádou. Teprve zpětně jej MOV prohlásil za oficiálně první zimní olympijské hry. Ke krasobruslení a hokeji přibylo rychlobruslení, běžecké lyžování, severská kombinace, skoky na lyžích, boby, curling a závod vojenských hlídek - vše pouze muži. V jediné ženské disciplíně nastoupila jedenáctiletá norská krasobruslařka a budoucí superstar Sonja Henie.'
         highlight: [19 18 4 0 3 6 12]
-    *   attachment: "<img src=' http://1.bp.blogspot.com/-LG9Qb3Gy_1g/Ump498BRY4I/AAAAAAAAf_s/9LDQsKqc9us/s1600/GB-full-eight-squad-1924.jpg' alt=''>"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/GB-full-eight-squad-1924.png' alt=''>"
         caption: "Britský curlingový tým v Chamonix"
         highlight: [6]
     *   header: "1928, St. Moritz"
         content: "Na přání zakladatele olympijských her, francouze Coubertina, se ve Svatém Mořici objevil skijöring. V původně čistě skandinávské disciplíně se na zamrzlém jezeře utkali lyžaři tažení koňmi. Coubertinův oblíbený sport získal status ukázkové disciplíny - v té se sice neudělují olympijské medaile, nicméně při úspěšném debutu se může na příštích hrách objevit jako plnohodnotná soutěž. Skijöring tohle štěstí neměl."
         highlight: [8]
-    *   attachment: "<img src='http://2.bp.blogspot.com/-0tt75vwH0VA/UFSkuyMtA0I/AAAAAAAABE0/FGDgucmvEqE/s1600/StMoritzskijoring1928.jpg' alt=''>"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/StMoritzskijoring1928.png' alt=''>"
         caption: "Finále Skijöringu ve Svatém Mořici"
         highlight: [8]
     *   header: "1932, Lake Placid"
@@ -35,18 +35,18 @@ ig.stories =
         caption: "Slavnostní zahájení a propagační video Hitlerovy třetí říše"
     *   header: "1940, Sapporo a 1944, Cortina d'Ampezzo"
         content: "Pátou zimní olympiádu mělo hostit japonské Sapporo. Po invazi do Číny v roce 1937 se jí pochopitelně vzdalo. Další v pořadí byl opět německý Garmisch-Partenkirchen, tomu byly hry odebrány po napadení Polska Německem o dva roky později. Následně vybral mezinárodní olympijský výbor jako nouzovou variantu finské Helsinki. Hry však byly i napotřetí zrušeny, tentokrát po agresi Sovětského svazu. Ani další hry, plánované na rok 1944 do italské Cortiny d'Ampezzo, se kvůli válce neuskutečnily."
-    *   attachment: "<img src='http://www.alphabetilately.org/Oly/1940/1940-J-W-2-a.jpg' alt='' />"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/1940-J-W-2-a.png' alt='' />"
         caption: "Logo neuskutečněných her v Sapporu"
     *   header: "1948, St. Moritz"
         content: 'Němci ani Japonci nebyli po prohrané válce pozváni, Sověti poslali pouze "skauty" na pozorování. Naposledy se odehrál závod vojenských hlídek: skládal se z běhu na lyžích s desetikilovým závažím a vojenskou puškou (pouze velitel hlídky mohl mít pistoli) a střelby na cíl ze stopadesátimetrové vzdálenosti. Na zkoušku se také uskutečnil zimní pětiboj, složený z běhu na lyžích, střelby, sjezdu, šermu a jízdy na koni.'
         highlight: [12 9]
-    *   attachment: "<img src='http://upload.wikimedia.org/wikipedia/commons/1/10/Bundesarchiv_Bild_102-05443%2C_St._Moritz%2C_Winterolympiade.jpg' alt='' />"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/Winterolympiade.png' alt='' />"
         caption: "Německý tým pro závod vojenských hlídek, předchůdce biatlonu"
         highlight: [12]
     *   header: "1952, Oslo"
         content: "Na olympiádě v Oslu se výrazně podepsala studená válka - východní Němci odmítli společnou německou reprezentaci a stejně jako Sověti zůstali doma. Z jejich neúčasti nejvíc těžili západoněmečtí sousedi, kteří ovládli tradiční německé disciplíny a vrátili se s rekordním počtem medailí. Roli hrála také hmotnost: průměrně vážil člen vítězného čtyřbobu 117 kg (viz foto); pro příští olympiádu proto byly zavedeny hmotnostní limity. Ženy poprvé dostaly možnost soutěžit v běžeckém lyžování, přibyl závod na 10 km."
         highlight: [18]
-    *   attachment: "<img src='http://scr-bob.de/imq/erfolge/Titel%203g.jpg' alt='' />"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/bob.png' alt='' />"
         caption: "Členové vítězného německého týmu bobistů"
         highlight: [3]
     *   header: "1956, Cortina d'Ampezzo"
@@ -61,7 +61,7 @@ ig.stories =
     *   header: "1964, Innsbruck"
         content: "V Innsbrucku závodilo 1091 sportovců, z toho 199 žen. Oproti minulým hrám byl počet účastníků o 40 % vyšší, olympiáda začala masovět. Krasobruslařské disciplíny byly poznamenány tři roky starou tragédií, kdy při leteckém neštěstí zahynul celý americký krasobruslařský tým. V týdnu před hrami navíc zemřel při tréninku australský sjezdař Ross Milne a britský sáňkař Kazimierz Kay-Skrzypeski. Skok na lyžích se rozdělil na velký a střední můstek a mezi sporty přibylo sáňkování. Podruhé a naposledy se mezi ukázkovými disciplínami objevil bavorský eisstockschießen."
         highlight: [11 0 2]
-    *   attachment: "<img src='http://2.bp.blogspot.com/-JsEBgbE_AtQ/Ty_N4pFOT4I/AAAAAAAAAr0/tCSDDfdLnis/s1600/sp-1964-innsbruck.jpg' alt='' />"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/sp-1964-innsbruck.png' alt='' />"
         caption: "Innsbruck ze skokanského můstku nad městem"
         highlight: [0]
     *   header: "1968, Grenoble"
@@ -71,7 +71,7 @@ ig.stories =
         highlight: [15]
     *   header: "1972, Sapporo"
         content: "Tři dny před hrami vyvrcholil spor o amatérismus: MOV pohrozil čtyřiceti alpským lyžařům, kteří dostávali ve svých disciplínách finanční odměny, vyloučením. Rakušana Karla Schranze, podporovaného sponzory, diskvalifikoval rovnou. Kanadský hokejový tým na protest vůbec nenastoupil. Odmítl soupeřit se sportovci z komunistických zemí, kteří mají status amatérů, byť ve skutečnosti jde o profesionály. V sedmdesátých a první polovině osmdesátých let počet sportovců nerostl, nové olympijské disciplímy se téměř neobjevovaly. Tématy her byla spíš regulace dopingu a postupné uvolňování povinného amatérismu."
-    *   attachment: "<img src='http://www.nbcolympics.com/sites/nbcolympics.com/files/styles/owg_slideshow_detail_860x485/public/1972_titova_russia_ap.jpg' alt='' />"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/1972_titova_russia_ap.png' alt='' />"
         caption: "V pozadí sovětská rychlobruslařka Ljudmila Titova, třetí v závodě na 500 metrů"
         highlight: [19]
     *   header: "1976, Innsbruck"
@@ -88,7 +88,7 @@ ig.stories =
     *   header: "1984, Sarajevo"
         content: "Jako ukázkový sport se objevil obří slalom pro sportovce s amputovanou končetinou. Hokejový turnaj po porážce Česloslovenska 2:0 opět ovládli Sověti, Čechoslováci skončili druzí. 49 ze 117 medailí získali východní Němci a Sovětský svaz."
         highlight: [7]
-    *   attachment: "<img src='http://www.cbc.ca/sports-content/figureskating/opinion/assets_c/2011/11/620-bolero-routine-thumb-620xauto-140342.jpg' alt='' />"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/620-bolero-routine-thumb-620xauto-140342.png' alt='' />"
         caption: "Britští krasobruslaři Jayne Torvellová a Christopher Dean při slavném tanečním vystoupení Bolero"
         highlight: [1]
     *   header: "1988, Calgary"
@@ -106,18 +106,18 @@ ig.stories =
     *   header: "1994, Lillehammer"
         content: "Změnil se olympijský cyklus, odteď se zimní a letní hry konaly odděleně. Změnil se také systém běžeckého lyžování: to, které tratě se na dané olympiádě pojedou klasickým a které volným způsobem, se mělo pravidelně střídat. Nejmladší olympijskou zlatou medailistkou všech dob se ve tříkilometrové štafetě stala třináctiletá korejská rychlobruslařka Kim Yoon-Mi. Skončila hokejová dominance Sovětů - Rusko skončilo čtvrté, turnaj vyhrálo Švédsko. Česko a Slovensko se do medailových statistik poprvé zapsalo jako samostatné státy, stejně jako postsovětské země."
         highlight: [18]
-    *   attachment: "<img src='http://3.bp.blogspot.com/-CeY2o-5aeqA/UsoBOm8Dw9I/AAAAAAAAIOA/Xuk8npR3-yI/s1600/anh1.jpg' alt='' />"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/anh1.png' alt='' />"
         caption: "Nejmladší zlatá medailistka, korejská rychlobruslařka Kim Yoon-Mi"
         highlight: [19]
     *   header: "1998, Nagano"
         content: "Sportovců od Calgary razantně přibylo: v Naganu jich bylo 2176, z toho 787 žen. Snowboarding se objevil rovnou jako plnohodnotný sport, aniž by se kdy představil na ukázku. Přibyl hokejový turnaj žen, zvítězily hráčky Spojených států. Ženské týmy se poprvé utkaly i v curlingu. V mužské části hokejového turnaje slavně zvítězil český tým, ve finále porazil Rusy 1:0."
         highlight: [20 15 6]
-    *   attachment: "<img src='http://www.hokej-litvinov.cz/foto/nagano/Nagano-Litv%C3%ADnov(1000).jpg' alt='' />"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/Nagano.png' alt='' />"
         caption: "Mezi zlatými českými hokejisty převažovali odchovanci Litvínova"
     *   header: "2002, Salt Lake City"
         content: "Další olympiáda v zámoří zaznamenala rekordní publikum a zisk: hry viděly v televizi 2 miliardy lidí, vydělaly 40 milionů dolarů. Běžecké disciplíny zapracovaly na zvýšení své atraktivity, zavedly hromadný start. Po 54 letech se do bobové dráhy vrátil skeleton, nově soutěžily ženské dvojboby. Šlo o první hry po zformování mezinárodní antidopingové agentury, v důsledku došlo k několika diskvalifikacím, zejména v běžeckém lyžování, a Rusko pohrozilo bojkotem závodů. V počtu medailí bývalá supervelmoc klesla až na páté místo - za Norsko, Německo, Spojené státy a Kanadu."
         highlight: [17 3]
-    *   attachment: "<img src='http://blu.stb.s-msn.com/i/57/2539CFEB4B97F4C62D0DA11FEAF9C.jpg' alt='' />"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/2539CFEB4B97F4C62D0DA11FEAF9C.png' alt='' />"
         caption: "V Salt Lake City se poprvé jely běžecké disciplíny s hromadným startem"
         highlight: [18]
     *   header: "2006, Turín"
@@ -128,12 +128,12 @@ ig.stories =
         highlight: [19]
     *   header: "2010, Vancouver"
         content: "Mezinárodní olympijský výbor před hrami odmítl množství navhovaných novinek: smíšenou štafetu v biatlonu, curling smíšených párů, závod týmů v alpském lyžování, závod týmů v bobech, saních a skeletonu. Zamítnutí ženských skoků na lyžích musel potvrdit až kanadský soud. Jedinou novou disciplínou se nakonec stal lyžařský skikros."
-    *   attachment: "<img src='http://olympicfanatic.files.wordpress.com/2010/01/ski-cross1.jpg' alt='' />"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/ski-cross1.png' alt='' />"
         caption: "Ve Vancouveru přibyl divácky zajímavý skikros"
         highlight: [22]
     *   header: "2014, Soči"
         content: "Čeká se dva a půl tisíce sportovců v 98 disciplínách. Pro srovnání: na prvních hrách v Chamonix závodilo 258 účastníků v 16 disciplínách. Jde o vůbec nejdražší olympijské hry, cenou 51 miliard USD poprvé překonají i náklady na letní hry. Plánovaný rozpočet na Soči byl přitom 12 miliard. Silným tématem her je korupce a - vzhledem k politicky složité situaci na Kavkaze - hrozba teroristického útoku. Objeví se disciplíny, které se do Vancouveru nedostaly: smíšená štafeta v biatlonu, závod týmů na saních a ženské skoky na lyžích. Další novinkou je běžkařský skiatlon, týmová soutěž v krasobruslení a dvě nové disciplíny ve freestyle lyžování a snowboardingu."
         highlight: [21 2 1 20]
-    *   attachment: "<img src='http://www.findingdulcinea.com/docroot/dulcinea/fd_images/news/sports/2009/dec/Canadian-Supreme-Court-Won-t-Hear-Women-Ski-Jumpers--Case/news/0/image.jpg' alt='' />"
+    *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/image.png' alt='' />"
         caption: "V Soči se bude závodit v disciplíně, o které na předchozí olympiádě musel rozodovat soud: skocích na lyžích žen"
         highlight: [0]
