@@ -13,23 +13,30 @@ d3.pCsv = ->
     arguments[0] = utils.proxyAddr arguments[0]
     d3.csv ...arguments
 
-utils.draw-bg = (element, padding = {}) ->
-    top = element.offsetTop
-    height = element.offsetHeight
+utils.draw-bg = (baseElement, padding = {}) ->
+    bgElement = document.createElement \div
+        ..className    = "ig-background"
+    ihned = document.querySelector '#ihned'
+    if ihned
+        that.parentNode.insertBefore bgElement, ihned
+    reposition = -> reposition-bg baseElement, bgElement, padding
+    reposition!
+    setInterval reposition, 1000
+
+
+reposition-bg = (baseElement, bgElement, padding) ->
+    top = baseElement.offsetTop
+    height = baseElement.offsetHeight
     if padding.top
         top += that
         height -= that
     if padding.bottom
         height += that
-
-    bg = document.createElement \div
+    bgElement
         ..style.top    = "#{top}px"
         ..style.height = "#{height}px"
-        ..className    = "ig-background"
 
-    ihned = document.querySelector '#ihned'
-    if ihned
-        that.parentNode.insertBefore bg, ihned
+
 utils.offset = (element, side) ->
     top = 0
     left = 0
