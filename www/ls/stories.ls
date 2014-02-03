@@ -5,7 +5,7 @@ ig.stories =
         caption: "Krasobruslení na Londýnské olympiádě, 1908"
         highlight: [1]
     *   header: "1920, Antverpy"
-        content: "Také lední hokej se dostal nejprve na program letních her. Na první poválečné olympiádě se ho zúčastnilo pouze sedm týmů - i proto, že dohodové mocnosti v čele s Německem na olympiádu nesměly. Za Kanadu nastoupil tým Winnipeg Falcons a suverénně zvítězil. Československý tým prohrál s Kanadou 0:15, se Spojenými státy 0:16, přesto skončil třetí."
+        content: "Také lední hokej se dostal nejprve na program letních her. Na první poválečné olympiádě se ho zúčastnilo pouze sedm týmů - i proto, že centrální mocnosti v čele s Německem na olympiádu nesměly. Za Kanadu nastoupil tým Winnipeg Falcons a suverénně zvítězil. Československý tým prohrál s Kanadou 0:15, se Spojenými státy 0:16, přesto skončil třetí."
         highlight: [15]
     *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/Winnipegfalcons.png' alt=''>"
         caption: "Kanadský hokejový tým Winnipeg Falcons na olympiádě v&nbsp;Antverpách"
@@ -17,7 +17,7 @@ ig.stories =
         caption: "Britský curlingový tým v Chamonix"
         highlight: [6]
     *   header: "1928, St. Moritz"
-        content: "Na přání zakladatele olympijských her, francouze Coubertina, se ve Svatém Mořici objevil skijöring. V původně čistě skandinávské disciplíně se na zamrzlém jezeře utkali lyžaři tažení koňmi. Coubertinův oblíbený sport získal status ukázkové disciplíny - v té se sice neudělují olympijské medaile, nicméně při úspěšném debutu se může na příštích hrách objevit jako plnohodnotná soutěž. Skijöring tohle štěstí neměl."
+        content: "Na přání zakladatele olympijských her, Francouze Coubertina, se ve Svatém Mořici objevil skijöring. V původně čistě skandinávské disciplíně se na zamrzlém jezeře utkali lyžaři tažení koňmi. Coubertinův oblíbený sport získal status ukázkové disciplíny - v té se sice neudělují olympijské medaile, nicméně při úspěšném debutu se může na příštích hrách objevit jako plnohodnotná soutěž. Skijöring tohle štěstí neměl."
         highlight: [8]
     *   attachment: "<img src='http://datasklad.ihned.cz/sochi-discipliny/www/img/discipliny/StMoritzskijoring1928.png' alt=''>"
         caption: "Finále Skijöringu ve Svatém Mořici"
@@ -98,7 +98,7 @@ ig.stories =
         caption: "V Calgary soutěžilo množství exotických sportovců, například jamaiský čtyřbob"
         highlight: [3]
     *   header: "1992, Albertville"
-        content: "Po fiasku s populárními, ale málo výkonnými sportovci změnil MOV pravidla. Dosud měla každá země v každém sportu zaručeno jedno místo, odteď bylo nutné dosáhnout stanovených limitů. V běžeckém lyžování přibyl stíhací závod, novinkou byl také ženský biatlon. Naposledy se na hrách objevily ukázkové sporty: curling, akrobatické lyžování, balet na lyžích a rychlostní lyžování. První dva se uchytily, druhé dva ne. Rychlostní lyžování doplatilo i na tragédii, kdy se při tréninku před závodem zabil švýcar Nicolas Bohatay."
+        content: "Po fiasku s populárními, ale málo výkonnými sportovci změnil MOV pravidla. Dosud měla každá země v každém sportu zaručeno jedno místo, odteď bylo nutné dosáhnout stanovených limitů. V běžeckém lyžování přibyl stíhací závod, novinkou byl také ženský biatlon. Naposledy se na hrách objevily ukázkové sporty: curling, akrobatické lyžování, balet na lyžích a rychlostní lyžování. První dva se uchytily, druhé dva ne. Rychlostní lyžování doplatilo i na tragédii, kdy se při tréninku před závodem zabil Švýcar Nicolas Bohatay."
         highlight: [18 21 16 6]
     *   attachment: '<iframe width="390" height="293" src="//www.youtube.com/embed/fG_nfFZWtVw" frameborder="0" allowfullscreen></iframe>'
         caption: "Neúspěšná ukázková disciplína, balet na lyžích"
