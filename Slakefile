@@ -6,13 +6,10 @@ option 'currentfile' 'Latest file that triggered the save' 'FILE'
 
 externalScripts =
     \http://service.ihned.cz/js/d3/v3.3.2.min.js
-    \http://service.ihned.cz/js/tooltip/v1.1.2.d3.min.js
     \http://service.ihned.cz/js/color/v0.0.1.min.js
     ...
 
-externalStyles =
-    \http://service.ihned.cz/js/tooltip/v1.1.3.css
-    ...
+externalStyles = []
 
 preferScripts = <[ init.js ]>
 deferScripts = <[ base.js ]>

@@ -1,4 +1,3 @@
-new Tooltip!watchElements!
 _gaq?.push(['_trackEvent', 'ig', ig.projectName]);
 get-ordered-games = ([row]) ->
     fields = for field of row
