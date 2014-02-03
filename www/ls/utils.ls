@@ -25,7 +25,7 @@ utils.draw-bg = (baseElement, padding = {}) ->
 
 
 reposition-bg = (baseElement, bgElement, padding) ->
-    top = baseElement.offsetTop
+    {top} = utils.offset baseElement
     height = baseElement.offsetHeight
     if padding.top
         top += that
